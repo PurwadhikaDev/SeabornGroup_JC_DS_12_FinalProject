@@ -1,4 +1,4 @@
-# Seaborn Group Final Project Purwadhika JCDS12_Jakarta
+SeabornGroup_JC_DS_12_FinalProject
 1. Albert Aldo - ✉️ 12albertaldo@gmail.com | [LinkedIn](https://www.linkedin.com/in/albertaldo/)
 2. Elvin Fatkhunnuha - ✉️ fatkhuelvin@gmail.com | [LinkedIn](https://www.linkedin.com/in/elvin-fatkhunnuha/)
 3. Mingnarto Lie - ✉️ mingnarto.lie@gmail.com | [LinkedIn](https://www.linkedin.com/in/mingnarto-lie-a8b77877/)

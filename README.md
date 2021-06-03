@@ -125,7 +125,7 @@ The following picture demonstrates how our Regression Model application flows :
 
 Other than predicting, our Model also able to recommend based on similar specifications for example :
 
-![RecommendationSystem](https://i.imgur.com/Zcdeedc.png)
+![RecommendationSystem](https://i.imgur.com/iporPZP.png)
 
 <hr>
 
@@ -135,7 +135,7 @@ After the property company gets the desired houses, in the selling stage, custom
 
 The following picture demonstrates how our Classification Model application flows :
 
-![ClassificationModel](https://i.imgur.com/xjDZZXg.png)
+![ClassificationModel](https://i.imgur.com/Zcdeedc.png)
 
 # 5. Conclusion
 

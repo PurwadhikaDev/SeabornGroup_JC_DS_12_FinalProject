@@ -1,7 +1,7 @@
-# SeabornGroup_JC_DS_12_FinalProject
-1. Albert Aldo - ✉️ 12albertaldo@gmail.com | LinkedIn : https://www.linkedin.com/in/albertaldo/
-2. Elvin Fatkhunnuha - ✉️ fatkhuelvin@gmail.com | LinkedIn : https://www.linkedin.com/in/elvin-fatkhunnuha/
-3. Mingnarto Lie - ✉️ mingnarto.lie@gmail.com | LinkedIn : https://www.linkedin.com/in/mingnarto-lie-a8b77877/
+# Seaborn Group Final Project Purwadhika JCDS12_Jakarta
+1. Albert Aldo - ✉️ 12albertaldo@gmail.com | [LinkedIn](https://www.linkedin.com/in/albertaldo/)
+2. Elvin Fatkhunnuha - ✉️ fatkhuelvin@gmail.com | [LinkedIn](https://www.linkedin.com/in/elvin-fatkhunnuha/)
+3. Mingnarto Lie - ✉️ mingnarto.lie@gmail.com | [LinkedIn](https://www.linkedin.com/in/mingnarto-lie-a8b77877/)
 
 # House Developer Optimizer With Machine Learning
 
@@ -125,7 +125,7 @@ The following picture demonstrates how our Regression Model application flows :
 
 Other than predicting, our Model also able to recommend based on similar specifications for example :
 
-![RecommendationSystem](https://i.imgur.com/iporPZP.png)
+![RecommendationSystem](https://i.imgur.com/Zcdeedc.png)
 
 <hr>
 

@@ -34,7 +34,7 @@ Those Clusters are:
 - Segment Upper Middle
 - Segment Top
 
-We also do Exploratory Data Analysis Regression (Market Value) & Classification (Segmentation), for full details, please refers to :
+We also do Exploratory Data Analysis Regression (Market Value) & Classification (Segmentation), for full details please refers to :
 - [Exploratory Data Analysis Regression (Market Value) - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/blob/main/3%20-%20EDA%20-%20Regression.ipynb)
 - [Exploratory Data Analysis Classification (Segmentation) - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/blob/main/4%20-%20EDA%20-%20Classification.ipynb)
 

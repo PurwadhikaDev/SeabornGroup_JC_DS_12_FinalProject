@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Marketing Segmentation House Prediction</title>
+  </head>
+  <body>
+    <ul class="nav nav-pills nav-fill" style="background-color: #051179;">
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/"><font color="white" face="arial black" size=5>Home</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/project"><font color="white" face="arial black" size=5>Project</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/dataset"><font color="white" face="arial black" size=5>Dataset</font></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Visualization</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize1"><font face="arial black">Univariate</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize2"><font face="arial black">Multivariate Regression</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize3"><font face="arial black">Multivariate Classification</font></a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Prediction</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict1"><font face="arial black">Market Value of House Prediction</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict2"><font face="arial black">Segmentation Marketing Prediction</font></a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <h1><div style="background: #051179; border: 2px solid rgb(0, 0, 0); color: white; font-size: 32px; font-weight: bold; letter-spacing: 0.1em; padding: 15px;"><marquee direction="left" scrollamount="10"><font color="white" face="arial black">Segmentation Marketing Prediction</font></marquee></div></h1>
+    <br><font face="arial black" size=6>&ensp;Please Input Condition House </font></br>
+    <br/>
+    <form method="POST" action="http://127.0.0.1:5000/hasil2">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <strong>Basements</strong>  
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the Type of Basement</strong> <br/>
+                  <strong>1.</strong> None – Indicates no basement.<br/>
+                  <strong>2.</strong>  Full Finished – Occupies the entire area under the first floor.<br/>
+                  <strong>3.</strong>  Full Semi-Finished – Could have some finish to include a floor covering,
+                    and ceiling. It looks more like a living area rather than a basement.<br/>
+                  <strong>4.</strong>  Full Unfinished – Is a typical basement with unfinished concrete floor,
+                    either rubble stone or cement over stone or concrete walls and would have
+                    exposed wood joist ceilings.<br/>
+                  <strong>5.</strong>  Full – Unknown Finish<br/>
+                  <strong>6.</strong>  Partial Finished – Occupies a portion under the first floor. Be careful of
+                    areas under sheds and porches. If there is a garage at basement level then it is a
+                    partial basement.<br/>
+                  <strong>7.</strong>  Partial Semi-Finished – One or more finished areas.<br/>
+                  <strong>8.</strong>  Partial Unfinished<br/>
+                  <strong>9.</strong>  Partial - Unknown Finish<br/>
+                  <strong>10.</strong>  Unknown Size - Finished<br/>
+                  <strong>11.</strong>  Unknown Size - Unfinished<br/><br/>
+                    <label for="basements"><strong>Please Choose Type of Basements : </strong> :</label>
+                    <select name="basements" id="basements">
+                      <option type="text" value="0">None</option>
+                      <option type="text" value="A">Full Finished</option>
+                      <option type="text" value="B">Full Semi-Finished</option>
+                      <option type="text" value="C">Full Unfinished</option>
+                      <option type="text" value="D">Full Unknown Finished</option>
+                      <option type="text" value="E">Partial Finished</option>
+                      <option type="text" value="F">Partial Semi-Finished</option>
+                      <option type="text" value="G">Partial Unfinished</option>
+                      <option type="text" value="H">Partial Unknown Finished</option>
+                      <option type="text" value="I">Unknown Size - Finished</option>
+                      <option type="text" value="J">Unknown Size - Semi-Finished</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+      
+      
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <strong>Central Air</strong>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This Indicates The House Using Central Air or Not</strong> <br/>
+                    <strong>1.</strong> Using Central Air (Yes)<br/>
+                    <strong>2.</strong> Not Using Central Air (No)<br/><br/>
+                    <label for="central_air"><strong>Please Choose for Central Air : </strong></label>
+                    <select name="central_air" id="central_air">
+                      <option type="text" value="Y">Using (Yes)</option>
+                      <option type="text" value="N">Not Using (No)</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+      
+      
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <strong>Exterior Condition</strong>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This Indicates Exterior Condition for The House</strong> <br/>
+                    <strong>1.</strong> New / Rehabbed – Noticeably New Construction<br/>
+                    <strong>2.</strong> Above Average <br/>
+                    <strong>3.</strong> Average – Would Be Typical<br/>
+                    <strong>4.</strong> Below Average<br/>
+                    <strong>5.</strong> Vacant – No occupancy<br/>
+                    <strong>6.</strong> Sealed / Structurally Compromised<br/><br/>
+                    <label for="exterior_condition"><strong>Please Choose for Exterior Condition : </strong></label>
+                    <select name="exterior_condition" id="exterior_condition">
+                      <option type="number" value=2>New / Rehabbed – Noticeably New Construction</option>
+                      <option type="number" value=3>Above Average</option>
+                      <option type="number" value=4>Average – Would Be Typical</option>
+                      <option type="number" value=5>Below Average</option>
+                      <option type="number" value=6>Vacant – No occupancy</option>
+                      <option type="number" value=7>Sealed / Structurally Compromised</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+      
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <strong>Fireplaces</strong>
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates how many fireplaces in The House</strong> <br/><br/>
+                <label for="fireplaces"><strong>Please Input How Many Fireplaces : </strong></label>
+                <input type="number" step= '0' name="fireplaces" value=1> pcs
+              </div>
+            </div>
+          </div>
+      
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <strong>Garage Type</strong>
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is Garage Type of The House</strong> <br/>
+                    <strong>1.</strong> None<br/>
+                    <strong>2.</strong> Basement / Built-In - Built into the front or rear basement of the dwelling or built into
+                      the first floor of the dwelling<br/>
+                    <strong>3.</strong> Attached Garage - Connected to the dwelling<br/>
+                    <strong>4.</strong> Detached Garage - A separate building that is not attached to the dwelling or any other
+                      building<br/>
+                    <strong>5.</strong> Converted<br/><br/>
+                    <label for="garage_type"><strong>Please Choose for Garage Type : </strong></label>
+                    <select name="garage_type" id="garage_type">
+                      <option type="text" value="0">None</option>
+                      <option type="text" value="A">Basement / Built-In</option>
+                      <option type="text" value="B">Attached Garage</option>
+                      <option type="text" value="C">Detached Garage</option>
+                      <option type="text" value="F">Converted</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                <strong>Interior Condition</strong>
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates Interior Condition for The House</strong> <br/>
+                    <strong>1.</strong> New / Rehabbed – Noticeably New Construction<br/>
+                    <strong>2.</strong> Above Average <br/>
+                    <strong>3.</strong> Average – Would Be Typical<br/>
+                    <strong>4.</strong> Below Average<br/>
+                    <strong>5.</strong> Vacant – No occupancy<br/>
+                    <strong>6.</strong> Sealed / Structurally Compromised<br/><br/>
+                    <label for="interior_condition"><strong>Please Choose for Interior Condition : </strong></label>
+                    <select name="interior_condition" id="interior_condition">
+                      <option type="number" value=2>New / Rehabbed – Noticeably New Construction</option>
+                      <option type="number" value=3>Above Average</option>
+                      <option type="number" value=4>Average – Would Be Typical</option>
+                      <option type="number" value=5>Below Average</option>
+                      <option type="number" value=6>Vacant – No occupancy</option>
+                      <option type="number" value=7>Sealed / Structurally Compromised</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                <strong>Market Value</strong>
+              </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates how much value of The House</strong> <br/><br/>
+                <label for="market_value"><strong>Please Input Market Value of The House : </strong></label>
+                $ <input type="number" step= '0' name="market_value" value=500000>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                <strong>Number of Rooms</strong>
+              </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates how many Rooms in The House (Include Bedrooms, Bathrooms, Kitchen, etc)</strong> <br/><br/>
+                <label for="number_of_rooms"><strong>Please Input How Many Rooms : </strong></label>
+                <input type="number" step= '0' name="number_of_rooms" value=10> rooms
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                <strong>Parcel Shape</strong>
+              </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates Parcel Shape for Land of The House</strong> <br/>
+                    <strong>1.</strong> Irregular - This would be a lot other than a square, rectangular or a triangle. It is not a
+                    grossly irregular shape.<br/>
+                    <strong>2.</strong> Grossly Irregular - This relates to a shape that may include curves, narrow portions, long
+                    access driveways or shapes where there are possibly portions of the site that cannot be
+                    utilized because of the physical shape.<br/>
+                    <strong>3.</strong> Triangular - This is a parcel of land that is triangular in shape.<br/>
+                    <strong>4.</strong> Right of Way - A long narrow parcel of land.<br/>
+                    <strong>5.</strong> Rectangular<br/><br/>
+                    <label for="parcel_shape"><strong>Please Choose for Parcel Shape : </strong></label>
+                    <select name="parcel_shape" id="parcel_shape">
+                      <option type="text" value="A">Irregular</option>
+                      <option type="text" value="B">Grossly Irregular</option>
+                      <option type="text" value="C">Triangular</option>
+                      <option type="text" value="D">Right of Way</option>
+                      <option type="text" value="E">Rectangular</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                <strong>Topography</strong>
+              </button>
+            </h2>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates Topography for Land of The House</strong> <br/>
+                    <strong>1.</strong> Above Street Level<br/>
+                    <strong>2.</strong> Below Street Level<br/>
+                    <strong>3.</strong> Flood Plain or Flood Hazard Zone<br/>
+                    <strong>4.</strong> Rocky<br/>
+                    <strong>5.</strong> Not Identified<br/>
+                    <strong>6.</strong> Level<br/><br/>
+                    <label for="topography"><strong>Please Choose for Topography : </strong></label>
+                    <select name="topography" id="topography">
+                      <option type="number" value=1>Above Street Level</option>
+                      <option type="number" value=2>Below Street Level</option>
+                      <option type="number" value=3>Flood Plain or Flood Hazard Zone</option>
+                      <option type="number" value=4>Rocky</option>
+                      <option type="number" value=5>Not Identified</option>
+                      <option type="number" value=6>Level</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEleven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                <strong>Total Area</strong>
+              </button>
+            </h2>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates Total Area of The House (Area of Land)</strong> <br/><br/>
+                <label for="total_area"><strong>Please Input Total Area : </strong></label>
+                <input type="number" step= '0' name="total_area" value=10000> sqft
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwelve">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                <strong>Total Livable Area</strong>
+              </button>
+            </h2>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This Indicates Total Livable Area of The House (Area of Building)</strong> <br/><br/>
+                <label for="total_livable_area"><strong>Please Input Total Livable Area : </strong></label>
+                <input type="number" step= '0' name="total_livable_area" value=8000> sqft
+              </div>
+            </div>
+          </div>
+      
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThirteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                <strong>Type Heater</strong>
+              </button>
+            </h2>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is Type Heater in The House</strong> <br/>
+                    <strong>1.</strong> None<br/>
+                    <strong>2.</strong> Hot Air (Ducts)<br/>
+                    <strong>3.</strong> Hot Water (Radiators or Baseboards)<br/>
+                    <strong>4.</strong> Electric Baseboard<br/>
+                    <strong>5.</strong> Heat Pump (Outside Unit)<br/>
+                    <strong>6.</strong> Other (Portable Heater)<br/>
+                    <strong>7.</strong> Radiant<br/>
+                    <strong>8.</strong> Undetermined<br/><br/>
+                    <label for="type_heater"><strong>Please Choose for Type Heater : </strong></label>
+                    <select name="type_heater" id="type_heater">
+                      <option type="text" value="0">None</option>
+                      <option type="text" value="A">Hot Air (Ducts)</option>
+                      <option type="text" value="B">Hot Water (Radiators or Baseboards)</option>
+                      <option type="text" value="C">Electric Baseboard</option>
+                      <option type="text" value="D">Heat Pump (Outside Unit)</option>
+                      <option type="text" value="E">Other (Portable Heater)</option>
+                      <option type="text" value="F">Radiant</option>
+                      <option type="text" value="G">Undetermined</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFourteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                <strong>View Type</strong>
+              </button>
+            </h2>
+            <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is View Type Inside from The House</strong> <br/>
+                    <strong>1.</strong> None<br/>
+                    <strong>2.</strong> Cityscape / Skyline<br/>
+                    <strong>3.</strong> Flowing Water<br/>
+                    <strong>4.</strong> Park / Green Area<br/>
+                    <strong>5.</strong> Commercial<br/>
+                    <strong>6.</strong> Industrial<br/>
+                    <strong>7.</strong> Edifice / Landmark<br/>
+                    <strong>8.</strong> Typical / Other<br/><br/>
+                    <label for="view_type"><strong>Please Choose for View Type : </strong></label>
+                    <select name="view_type" id="view_type">
+                      <option type="text" value="0">None</option>
+                      <option type="text" value="A">Cityscape / Skyline</option>
+                      <option type="text" value="B">Flowing Water</option>
+                      <option type="text" value="C">Park / Green Area</option>
+                      <option type="text" value="D">Commercial</option>
+                      <option type="text" value="E">Industrial</option>
+                      <option type="text" value="H">Edifice / Landmark</option>
+                      <option type="text" value="I">Typical / Other</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+      
+      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFifteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                <strong>Building Description</strong>
+              </button>
+            </h2>
+            <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is Building Description from The House</strong> <br/>
+                    <strong>1.</strong> <strong>FRAME</strong> is the building of structures from steels.<br/>
+                    <strong>2.</strong> <strong>MASONRY</strong> is the building of structures from bricks, and concrete.<br/>
+                    <strong>3.</strong> <strong>MASONRY + OTHER</strong> is the building of structures from bricks, concrete and steels.<br/>
+                    <strong>4.</strong> <strong>STONE</strong> is the building from Stone structure. (Antique)<br/><br/>
+                    <label for="building_description"><strong>Please Choose for Building Description : </strong></label>
+                    <select name="building_description" id="building_description">
+                      <option type="text" value="FRAME">FRAME</option>
+                      <option type="text" value="MASONRY">MASONRY</option>
+                      <option type="text" value="MASONRY+OTHER">MASONRY + OTHER</option>
+                      <option type="text" value="STONE">STONE</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+
+
+        <br>
+        &ensp;&ensp;<button type="submit" class="btn btn-success">Predict</button>
+    </form>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

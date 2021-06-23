@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Visualization Multivariate (Classification Segment)</title>
+  </head>
+  <body>
+    <ul class="nav nav-pills nav-fill" style="background-color: #051179;">
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/"><font color="white" face="arial black" size=5>Home</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/project"><font color="white" face="arial black" size=5>Project</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/dataset"><font color="white" face="arial black" size=5>Dataset</font></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Visualization</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize1"><font face="arial black">Univariate</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize2"><font face="arial black">Multivariate Regression</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize3"><font face="arial black">Multivariate Classification</font></a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Prediction</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict1"><font face="arial black">Market Value of House Prediction</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict2"><font face="arial black">Segmentation Marketing Prediction</font></a></li>
+        </ul>
+      </li>
+    </ul>
+    <h1><div style="background: #051179; border: 2px solid rgb(0, 0, 0); color: white; font-size: 32px; font-weight: bold; letter-spacing: 0.1em; padding: 15px;"><marquee direction="left" scrollamount="10"><font color="white" face="arial black">Visualization Multivariate (Classification Segment)</font></marquee></div></h1>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <strong>Central Air</strong>
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <center><strong>Central Air</strong></center>
+            <center>&ensp;<img src="../static/b1centralair.png"></center>
+            <p><strong>As we can see from the graph, group from the first segment answered mostly no for central air, but at the same time, higher segment mostly answered yes even though some of them also answered no.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <strong>Exterior Condition</strong>
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <center><strong>Exterior Condition</strong></center>
+            <center>&ensp;<img src="../static/b2exteriorcondition.png"></center>
+            <p><strong>'Average' condition for exterior dominate the first to fourth segment, but at the same time 'above average' also seeing an increase in the higher segment with the fifth segment having 'above average' dominate fully.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <strong>Interior Condition</strong>
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <center><strong>Interior Condition</strong></center>
+            <center>&ensp;<img src="../static/b3interiorcondition.png"></center>
+            <p><strong>'Average' condition for interior dominate the first to fourth segment, but at the same time 'above average' also seeing an increase in the higher segment with the fifth segment having 'above average' dominate fully.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <strong>View Type</strong>
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>View Type</strong></center>
+          <center>&ensp;<img src="../static/b4viewtype.png"></center>
+          <p><strong>'Typical' dominate the view type for the first to fourth segment, but at the same time 'park/green area' also seeing an increase in the higher segment with the fifth segment having 'park/green area' dominate fully.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <strong>Fireplaces</strong>
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Fireplaces</strong></center>
+          <center>&ensp;<img src="../static/b5fireplaces.png"></center>
+          <p><strong>In the higher the segment, we can see an increase of houses with fireplaces.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          <strong>Type Heater</strong>
+        </button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Type Heater</strong></center>
+          <center>&ensp;<img src="../static/a6interiorcondition.PNG"></center>
+          <p><strong>'None', 'Hot air ducts', and 'hot water' dominate the heater type in the first and second segment. Also for 'Hot air ducts', 'hot water' and 'undetermined' dominate the heater type in the third, fourth, and fifth segment where 'heat pump' and 'radiant' started to take over.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSeven">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          <strong>Garage Type</strong>
+        </button>
+      </h2>
+      <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Garage Type</strong></center>
+          <center>&ensp;<img src="../static/b7garagetype.png"></center>
+          <p><strong>'Built in/basement' dominates the garage type in the first to third segment, whereas the fourth and fifth segment prefer 'detached' garage.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingEight">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          <strong>Topography</strong>
+        </button>
+      </h2>
+      <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Topography</strong></center>
+          <center>&ensp;<img src="../static/b8topography.png"></center>
+          <p><strong>'Level' dominate the topography type in the first to third segment, whereas we can see more houses 'below street level' at fourth and fifth segment.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingNine">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          <strong>Parcel Shape</strong>
+        </button>
+      </h2>
+      <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Parcel Shape</strong></center>
+          <center>&ensp;<img src="../static/b9parcelshape.png"></center>
+          <p><strong>'Rectangle' dominates the parcel shape at the first to all segment, with an increase in 'irregular' and 'grossly irregular' at fourth and fifth segment.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+          <strong>Zoning</strong>
+        </button>
+      </h2>
+      <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Zoning</strong></center>
+          <center>&ensp;<img src="../static/b10zoning.png"></center>
+          <p><strong>'RSA' dominates zoning type at in the first to third segment with 'RSA-5' being the majority whereas 'RSD' dominates at fourth and fifth segment with 'RSD-1' being the majority.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingEleven">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+          <strong>Building Description</strong>
+        </button>
+      </h2>
+      <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Building Description</strong></center>
+          <center>&ensp;<img src="../static/b11constructiontype.png"></center>
+          <p><strong>'MASONRY' dominates the construction type in the first to third segment whereas 'STONE' dominates at fourth and fifth segment.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwelve">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+          <strong>Basements</strong>
+        </button>
+      </h2>
+      <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Basements</strong></center>
+          <center>&ensp;<img src="../static/b12basements.png"></center>
+          <p><strong>'Partial-Size' basements dominates at the first to third segment with 'Full-Size' basements seeing a sharp increase at the third segment until it totally dominates at the fourth and fifth segment.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThirteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+          <strong>Section</strong>
+        </button>
+      </h2>
+      <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Section</strong></center>
+          <center>&ensp;<img src="../static/b13section.png"></center>
+          <p><strong>Most segment located in the North with 'North' and 'Northeast' dominated by cheaper building. Almost all segment is located in 'Northwest' except the first segment.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFourteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+          <strong>Number of Bedrooms</strong>
+        </button>
+      </h2>
+      <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Number of Bedrooms</strong></center>
+          <center>&ensp;<img src="../static/b14numberofbedrooms.png"></center>
+          <p><strong>Higher segment also means higher numbers of bedrooms.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFifteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+          <strong>Number of Bathrooms</strong>
+        </button>
+      </h2>
+      <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Number of Bathrooms</strong></center>
+          <center>&ensp;<img src="../static/b15numberofbathrooms.png"></center>
+          <p><strong>Higher segment also means higher numbers of bathrooms.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSixteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+          <strong>Number of Rooms</strong>
+        </button>
+      </h2>
+      <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Number of Rooms</strong></center>
+          <center>&ensp;<img src="../static/b16numberofrooms.png"></center>
+          <p><strong>Higher segment also means higher numbers of rooms.</strong></p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSeventeen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+          <strong>Number Stories</strong>
+        </button>
+      </h2>
+      <div id="collapseSeventeen" class="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Number Stories</strong></center>
+          <center>&ensp;<img src="../static/b17numberstories.png"></center>
+          <p><strong>Higher segment doesn't seem to indicate higher number of stories (having more or less the same numbers).</strong></p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingEighteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+          <strong>Year Built</strong>
+        </button>
+      </h2>
+      <div id="collapseEighteen" class="accordion-collapse collapse" aria-labelledby="headingEighteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Year Built</strong></center>
+          <center>&ensp;<img src="../static/b18yearbuilt.png"></center>
+          <p><strong>The average of the year-built in this dataset is between 1923 to 1948.</strong></p>        
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

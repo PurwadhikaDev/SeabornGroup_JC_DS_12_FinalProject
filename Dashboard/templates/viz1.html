@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Univariate Visualization</title>
+  </head>
+  <body>
+    <ul class="nav nav-pills nav-fill" style="background-color: #051179;">
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/"><font color="white" face="arial black" size=5>Home</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/project"><font color="white" face="arial black" size=5>Project</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/dataset"><font color="white" face="arial black" size=5>Dataset</font></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Visualization</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize1"><font face="arial black">Univariate</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize2"><font face="arial black">Multivariate Regression</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize3"><font face="arial black">Multivariate Classification</font></a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Prediction</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict1"><font face="arial black">Market Value of House Prediction</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict2"><font face="arial black">Segmentation Marketing Prediction</font></a></li>
+        </ul>
+      </li>
+    </ul>
+    <h1><div style="background: #051179; border: 2px solid rgb(0, 0, 0); color: white; font-size: 32px; font-weight: bold; letter-spacing: 0.1em; padding: 15px;"><marquee direction="left" scrollamount="10"><font color="white" face="arial black">Univariate Visualization</font></marquee></div></h1>
+
+    
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <strong>Segment</strong>  
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <center><strong>Segment</strong></center>
+            <center>&ensp;<img src="../static/1segment.PNG"></center>
+            <p><strong>From this Countplot, we can see :</strong><br/>
+              - Segment 1 : 42851 Residence<br/>
+              - Segment 2 : 28395 Residence<br/>
+              - Segment 3 :  5243 Residence<br/>
+              - Segment 4 :   896 Residence<br/>
+              - Segment 5 :   235 Residence</p>
+          </div>
+        </div>
+      </div>
+
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <strong>Zoning</strong>
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <center><strong>Zoning</strong></center>
+            <center>&ensp;<img src="../static/2zoning.PNG"></center>
+            <p><strong>From this Countplot, we can see :</strong><br/>
+              - Zoning 1 (RSA5) : 48850 Residence [Min Lot Area :  1440 sq ft, Min frontage : 16 ft, Min depth :  5 ft]<br/>
+              - Zoning 2 (RSA4) :  9060 Residence [Min Lot Area :  1620 sq ft, Min frontage : 18 ft, Min depth :  8 ft]<br/>
+              - Zoning 3 (RSA3) : 13228 Residence [Min Lot Area :  2250 sq ft, Min frontage : 25 ft, Min depth :  8 ft]<br/>
+              - Zoning 4 (RSA2) :  2833 Residence [Min Lot Area :  3150 sq ft, Min frontage : 35 ft, Min depth :  8 ft]<br/>
+              - Zoning 5 (RSA1) :   278 Residence [Min Lot Area :  5000 sq ft, Min frontage : 50 ft, Min depth : 10 ft] * Don't Have School, Hospital Facilities<br/>
+              - Zoning 6 (RSD3) :  2643 Residence [Min Lot Area :  5000 sq ft, Min frontage : 50 ft, Min depth : 10 ft] * With School, Hospital Facilities<br/>
+              - Zoning 7 (RSD2) :    18 Residence [Min Lot Area :  7800 sq ft, Min frontage : 65 ft, Min depth : 10 ft]<br/>
+              - Zoning 8 (RSD1) :   710 Residence [Min Lot Area : 10000 sq ft, Min frontage : 75 ft, Min depth : 15 ft]</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <strong>Topography</strong>
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <center><strong>Topography</strong></center>
+            <center>&ensp;<img src="../static/3topography.PNG"></center>
+            <p><strong>From this Countplot, we can see :</strong><br/>
+              - 1 - Above Street Level :  7147 Residence<br/>
+              - 2 - Below Street Level :   118 Residence<br/>
+              - 3 - Flood Plain        :    17 Residence<br/>
+              - 4 - Rocky              :    20 Residence<br/>
+              - 5 - Not Identified     :   963 Residence<br/>
+              - 6 - Level              : 69355 Residence</p>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <strong>Central Air</strong>
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Central Air</strong></center>
+          <center>&ensp;<img src="../static/4centralair.PNG"></center>
+          <p><strong>From this Countplot, we can see Total Residence which Using Central Air :</strong><br/>
+            - Y (Using) : 22755 Residence<br/>
+            - N (Not Using) : 54865 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <strong>Basements</strong>
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Basements</strong></center>
+          <center>&ensp;<img src="../static/5basements.PNG"></center>
+          <p><strong>Type of Basements :</strong><br/>
+            - 0 = None – Indicates no basement (7924 Residence)<br/>
+            - A = Full Finished (3067 Residence)<br/>
+            - B = Full Semi-Finished (205 Residence)<br/>
+            - C = Full Unfinished (4305 Residence)<br/>
+            - D = Full – Unknown Finish (13123 Residence)<br/>
+            - E = Partial Finished (2444 Residence)<br/>
+            - F = Partial Semi-Finished (24479 Residence)<br/>
+            - G = Partial Unfinished (792 Residence)<br/>
+            - H = Partial - Unknown Finish (19825 Residence)<br/>
+            - I = Unknown Size - Finished (625 Residence)<br/>
+            - J = Unknown Size - Unfinished (829 Residence)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          <strong>Garage Type</strong>
+        </button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Garage Type</strong></center>
+          <center>&ensp;<img src="../static/6garagetype.png"></center>
+          <p><strong>Type of Garage :</strong><br/>
+            - 0 = None (14420 Residence)<br/>
+            - A = Basement / Built-In (47179 Residence)<br/>
+            - B = Attached Garage (1695 Residence)<br/>
+            - C = Detached Garage (4839 Residence)<br/>
+            - F = Converted (9487 Residence)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSeven">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          <strong>Fireplaces</strong>
+        </button>
+      </h2>
+      <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Fireplaces</strong></center>
+          <center>&ensp;<img src="../static/7fireplaces.png"></center>
+          <p><strong>From this Countplot, we can see Total Residence which Using Fireplaces :</strong><br/>
+            - 0 (None) : 72073 Residence<br/>
+            - 1 : 4595 Residence<br/>
+            - 2 :  550 Residence<br/>
+            - 3 :  246 Residence<br/>
+            - 4 :   62 Residence<br/>
+            - 5 :   94 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingEight">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          <strong>Interior Condition</strong>
+        </button>
+      </h2>
+      <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Interior Condition</strong></center>
+          <center>&ensp;<img src="../static/8interiorcondition.png"></center>
+          <p><strong>Type of Interior Condition:</strong><br/>
+            - 2 (New / Rehabbed) - 1409 Residence<br/>
+            - 3 (Above Average) - 5021 Residence<br/>
+            - 4 (Average) - 70036 Residence<br/>
+            - 5 (Below Average) - 942 Residence<br/>
+            - 6 (Vacant) - 103 Residence<br/>
+            - 7 (Structurally Compromised) - 109 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingNine">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          <strong>Exterior Condition</strong>
+        </button>
+      </h2>
+      <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Exterior Condition</strong></center>
+          <center>&ensp;<img src="../static/9exteriorcondition.png"></center>
+          <p><strong>Type of Exterior Condition:</strong><br/>
+            - 2 (New / Rehabbed) - 1333 Residence<br/>
+            - 3 (Above Average) - 4981 Residence<br/>
+            - 4 (Average) - 70172 Residence<br/>
+            - 5 (Below Average) - 926 Residence<br/>
+            - 6 (Vacant) - 99 Residence<br/>
+            - 7 (Structurally Compromised) - 109 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+          <strong>Number Stories</strong>
+        </button>
+      </h2>
+      <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Number Stories</strong></center>
+          <center>&ensp;<img src="../static/10numberstories.png"></center>
+          <p><strong>From this Countplot, we can see Total Residence per Number Stories :</strong><br/>
+            - 0 (Base) : 10972 Residence<br/>
+            - 1 : 1084 Residence<br/>
+            - 2 : 60974 Residence<br/>
+            - 3 :  4515 Residence<br/>
+            - 4 :    74 Residence<br/>
+            - 6 :     1 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingEleven">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+          <strong>Parcel Shape</strong>
+        </button>
+      </h2>
+      <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Parcel Shape</strong></center>
+          <center>&ensp;<img src="../static/11parcelshape.png"></center>
+          <p><strong>From this Barplot, we can see Total Residence by Parcel Shape :</strong><br/>
+            - A (Irregular) : 6703 Residence<br/>
+            - B (Grossly Irregular) : 998 Residence<br/>
+            - C (Triangular) : 173 Residence<br/>
+            - D (Right of way) :  10 Residence<br/>
+            - E (Rectangular) :    69736 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwelve">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+          <strong>Street Designation</strong>
+        </button>
+      </h2>
+      <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Street Designation</strong></center>
+          <center>&ensp;<img src="../static/12streetdesignation.png"></center>
+          <p><strong>Street Designation</strong><br/>
+            - ALY - Alley (1 Residence)<br/>
+            - AVE - Avenue (16236 Residence)<br/>
+            - BLV - Boulevard (411 Residence)<br/>
+            - CIR - Circle (281 Residence)<br/>
+            - CT  - Court (32 Residence)<br/>
+            - DR  - Drive (2324 Residence)<br/>
+            - HTS - Heights (2 Residence)<br/>
+            - LN  - Lane (2810 Residence)<br/>
+            - MEW - Mews (6 Residence)<br/>
+            - PK  - Park (203 Residence)<br/>
+            - PKY - Parkway (105 Residence)<br/>
+            - PL  - Place (1843 Residence)<br/>
+            - PLZ - Plaza (41 Residence)<br/>
+            - RD  - Road (10415 Residence)<br/>
+            - ROW - Roadway (3 Residence)<br/>
+            - SQ  - Square (64 Residence)<br/>
+            - ST  - Street (42508 Residence)<br/>
+            - TER - Terrace (292 Residence)<br/>
+            - WAY - Way (43 Residence)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThirteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+          <strong>Type Heater</strong>
+        </button>
+      </h2>
+      <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+        <center><strong>Type Heater</strong></center>
+        <center>&ensp;<img src="../static/13typeheater.png"></center>
+        <p><strong>Type of heater or heating system:</strong><br/>
+          - 0 = None - 23270 Residence<br/>
+          - a = Hot air (ducts) - 24449 Residence<br/>
+          - b = Hot water (radiators or baseboards) - 15399 Residence<br/>
+          - c = Electric baseboard - 160 Residence<br/>
+          - d = Heat pump (outside unit) - 40 Residence<br/>
+          - e = Other - 190 Residence<br/>
+          - g = Radiant - 692 Residence<br/>
+          - h = Undetermined - 13420 Residence</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFourteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+          <strong>View Type</strong>
+        </button>
+      </h2>
+      <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>View Type</strong></center>
+          <center>&ensp;<img src="../static/14viewtype.png"></center>
+          <p><strong>View Type:</strong><br/>
+            - 0 = None - 83 Residence<br/>
+            - A = Cityscape / Skyline - 4131 Residence<br/>
+            - B = Flowing Water - 19 Residence<br/>
+            - C = Park/Green Area - 2097 Residence<br/>
+            - D = Commercial - 315 Residence<br/>
+            - E = Industrial - 163 Residence<br/>
+            - H = Edifice / Landmark - 654 Residence<br/>
+            - I = Typical / Other - 70158 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFifteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+          <strong>Building Description</strong>
+        </button>
+      </h2>
+      <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Building Description</strong></center>
+          <center>&ensp;<img src="../static/15buildingdescription.png"></center>
+          <p><strong>Building Description:</strong><br/>
+            - FRAME : Steel - 2258 Residence<br/>
+            - MASONRY : Bricks and Concrete - 64411 Residence<br/>
+            - MASONRY+OTHER : Bricks and Concrete Combine with Steel - 7682 Residence<br/>
+            - STONE : Purely Stone - 3269 Residence</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSixteen">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+          <strong>Section</strong>
+        </button>
+      </h2>
+      <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <center><strong>Section</strong></center>
+          <center>&ensp;<img src="../static/16section.png"></center>
+          <p><strong>Section:</strong><br/>
+            - Central City : 35 Residence<br/>
+            - North : 18259 Residence<br/>
+            - North East : 39316 Residence<br/>
+            - North West : 14078 Residence<br/>
+            - South : 1281 Residence<br/>
+            - South West : 1072 Residence<br/>
+            - West : 3579 Residence</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

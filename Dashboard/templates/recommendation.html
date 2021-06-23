@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Market Value House Recommendation</title>
+  </head>
+  <body>
+    <ul class="nav nav-pills nav-fill" style="background-color: #051179;">
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/"><font color="white" face="arial black" size=5>Home</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/project"><font color="white" face="arial black" size=5>Project</font></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:5000/dataset"><font color="white" face="arial black" size=5>Dataset</font></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Visualization</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize1"><font face="arial black">Univariate</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize2"><font face="arial black">Multivariate Regression</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/visualize3"><font face="arial black">Multivariate Classification</font></a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <font color="white" face="arial black" size=5>Prediction</font>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict1"><font face="arial black">Market Value of House Prediction</font></a></li>
+          <li><a class="dropdown-item" href="http://127.0.0.1:5000/predict2"><font face="arial black">Segmentation Marketing Prediction</font></a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <h1><div style="background: #051179; border: 2px solid rgb(0, 0, 0); color: white; font-size: 32px; font-weight: bold; letter-spacing: 0.1em; padding: 15px;"><marquee direction="left" scrollamount="10"><font color="white" face="arial black">Our Recommendation for You</font></marquee></div></h1>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <table class="table caption-top">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">Information</th>
+          <th scope="col">Your Input</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Basements</th>
+          <td>{{ result_basements_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Central Air</th>
+          <td>{{ result_central_air_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Exterior Condition</th>
+          <td>{{ result_exterior_condition_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Fireplaces</th>
+          <td>{{ result_fireplaces_01 }} pc</td>
+        </tr>
+        <tr>
+          <th scope="row">Garage Type</th>
+          <td>{{ result_garage_type_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Interior Condition</th>
+          <td>{{ result_interior_condition_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Market Value (Prediction)</th>
+          <td>${{ result_market_value_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Number of Rooms</th>
+          <td>{{ result_number_of_rooms_01 }} rooms</td>
+        </tr>
+        <tr>
+          <th scope="row">Number Stories</th>
+          <td>{{ result_number_stories_01 }} stories</td>
+        </tr>
+        <tr>
+          <th scope="row">Parcel Shape</th>
+          <td>{{ result_parcel_shape_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Street Designation</th>
+          <td>{{ result_street_designation_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Topography</th>
+          <td>{{ result_topography_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Total Area</th>
+          <td>{{ result_total_area_01 }} sqft</td>
+        </tr>
+        <tr>
+          <th scope="row">Total Livable Area</th>
+          <td>{{ result_total_livable_area_01 }} sqft</td>
+        </tr>
+        <tr>
+          <th scope="row">Type Heater</th>
+          <td>{{ result_type_heater_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">View Type</th>
+          <td>{{ result_view_type_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Building Description</th>
+          <td>{{ result_building_description_01 }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Section</th>
+          <td>{{ result_section_01 }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2><strong>&ensp;Top 5 Recommendation from Your Input Based on Our Database</strong></h2>
+
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <strong>Recommendation 1</strong>  
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <table class="table caption-top">
+              <thead>
+                <tr class="table-dark">
+                  <th scope="col">Information</th>
+                  <th scope="col">Input</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">{{ input1a }}</th>
+                  <td>{{ recommenderA1 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input2a }}</th>
+                  <td>{{ recommenderA2 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input3a }}</th>
+                  <td>{{ recommenderA3 }} ft</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input4a }}</th>
+                  <td>{{ recommenderA4 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input5a }}</th>
+                  <td>{{ recommenderA5 }} pcs</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input6a }}</th>
+                  <td>{{ recommenderA6 }} ft</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input7a }}</th>
+                  <td>{{ recommenderA7 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input8a }}</th>
+                  <td>{{ recommenderA8 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input9a }}</th>
+                  <td>{{ recommenderA9 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input10a }}</th>
+                  <td>${{ recommenderA10 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input11a }}</th>
+                  <td>{{ recommenderA11 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input12a }}</th>
+                  <td>{{ recommenderA12 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input13a }}</th>
+                  <td>{{ recommenderA13 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input14a }}</th>
+                  <td>{{ recommenderA14 }} stories</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input15a }}</th>
+                  <td>{{ recommenderA15 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input16a }}</th>
+                  <td>{{ recommenderA16 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input17a }}</th>
+                  <td>{{ recommenderA17 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input18a }}</th>
+                  <td>{{ recommenderA18 }} ft2</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input19a }}</th>
+                  <td>{{ recommenderA19 }} ft2</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input20a }}</th>
+                  <td>{{ recommenderA20 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input21a }}</th>
+                  <td>{{ recommenderA21 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input22a }}</th>
+                  <td>{{ recommenderA22 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input23a }}</th>
+                  <td>{{ recommenderA23 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input24a }}</th>
+                  <td>{{ recommenderA24 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input25a }}</th>
+                  <td>{{ recommenderA25 }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <strong>Recommendation 2</strong>
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <table class="table caption-top">
+              <thead>
+                <tr class="table-dark">
+                  <th scope="col">Information</th>
+                  <th scope="col">Input</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">{{ input1a }}</th>
+                  <td>{{ recommenderB1 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input2a }}</th>
+                  <td>{{ recommenderB2 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input3a }}</th>
+                  <td>{{ recommenderB3 }} ft</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input4a }}</th>
+                  <td>{{ recommenderB4 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input5a }}</th>
+                  <td>{{ recommenderB5 }} pcs</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input6a }}</th>
+                  <td>{{ recommenderB6 }} ft</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input7a }}</th>
+                  <td>{{ recommenderB7 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input8a }}</th>
+                  <td>{{ recommenderB8 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input9a }}</th>
+                  <td>{{ recommenderB9 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input10a }}</th>
+                  <td>${{ recommenderB10 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input11a }}</th>
+                  <td>{{ recommenderB11 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input12a }}</th>
+                  <td>{{ recommenderB12 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input13a }}</th>
+                  <td>{{ recommenderB13 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input14a }}</th>
+                  <td>{{ recommenderB14 }} stories</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input15a }}</th>
+                  <td>{{ recommenderB15 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input16a }}</th>
+                  <td>{{ recommenderB16 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input17a }}</th>
+                  <td>{{ recommenderB17 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input18a }}</th>
+                  <td>{{ recommenderB18 }} ft2</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input19a }}</th>
+                  <td>{{ recommenderB19 }} ft2</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input20a }}</th>
+                  <td>{{ recommenderB20 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input21a }}</th>
+                  <td>{{ recommenderB21 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input22a }}</th>
+                  <td>{{ recommenderB22 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input23a }}</th>
+                  <td>{{ recommenderB23 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input24a }}</th>
+                  <td>{{ recommenderB24 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input25a }}</th>
+                  <td>{{ recommenderB25 }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <strong>Recommendation 3</strong>
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <table class="table caption-top">
+              <thead>
+                <tr class="table-dark">
+                  <th scope="col">Information</th>
+                  <th scope="col">Input</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">{{ input1a }}</th>
+                  <td>{{ recommenderC1 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input2a }}</th>
+                  <td>{{ recommenderC2 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input3a }}</th>
+                  <td>{{ recommenderC3 }} ft</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input4a }}</th>
+                  <td>{{ recommenderC4 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input5a }}</th>
+                  <td>{{ recommenderC5 }} pcs</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input6a }}</th>
+                  <td>{{ recommenderC6 }} ft</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input7a }}</th>
+                  <td>{{ recommenderC7 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input8a }}</th>
+                  <td>{{ recommenderC8 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input9a }}</th>
+                  <td>{{ recommenderC9 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input10a }}</th>
+                  <td>${{ recommenderC10 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input11a }}</th>
+                  <td>{{ recommenderC11 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input12a }}</th>
+                  <td>{{ recommenderC12 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input13a }}</th>
+                  <td>{{ recommenderC13 }} rooms</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input14a }}</th>
+                  <td>{{ recommenderC14 }} stories</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input15a }}</th>
+                  <td>{{ recommenderC15 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input16a }}</th>
+                  <td>{{ recommenderC16 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input17a }}</th>
+                  <td>{{ recommenderC17 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input18a }}</th>
+                  <td>{{ recommenderC18 }} ft2</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input19a }}</th>
+                  <td>{{ recommenderC19 }} ft2</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input20a }}</th>
+                  <td>{{ recommenderC20 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input21a }}</th>
+                  <td>{{ recommenderC21 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input22a }}</th>
+                  <td>{{ recommenderC22 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input23a }}</th>
+                  <td>{{ recommenderC23 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input24a }}</th>
+                  <td>{{ recommenderC24 }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ input25a }}</th>
+                  <td>{{ recommenderC25 }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <strong>Recommendation 4</strong>
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <table class="table caption-top">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">Information</th>
+                <th scope="col">Input</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{ input1a }}</th>
+                <td>{{ recommenderD1 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input2a }}</th>
+                <td>{{ recommenderD2 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input3a }}</th>
+                <td>{{ recommenderD3 }} ft</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input4a }}</th>
+                <td>{{ recommenderD4 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input5a }}</th>
+                <td>{{ recommenderD5 }} pcs</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input6a }}</th>
+                <td>{{ recommenderD6 }} ft</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input7a }}</th>
+                <td>{{ recommenderD7 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input8a }}</th>
+                <td>{{ recommenderD8 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input9a }}</th>
+                <td>{{ recommenderD9 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input10a }}</th>
+                <td>${{ recommenderD10 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input11a }}</th>
+                <td>{{ recommenderD11 }} rooms</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input12a }}</th>
+                <td>{{ recommenderD12 }} rooms</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input13a }}</th>
+                <td>{{ recommenderD13 }} rooms</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input14a }}</th>
+                <td>{{ recommenderD14 }} stories</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input15a }}</th>
+                <td>{{ recommenderD15 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input16a }}</th>
+                <td>{{ recommenderD16 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input17a }}</th>
+                <td>{{ recommenderD17 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input18a }}</th>
+                <td>{{ recommenderD18 }} ft2</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input19a }}</th>
+                <td>{{ recommenderD19 }} ft2</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input20a }}</th>
+                <td>{{ recommenderD20 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input21a }}</th>
+                <td>{{ recommenderD21 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input22a }}</th>
+                <td>{{ recommenderD22 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input23a }}</th>
+                <td>{{ recommenderD23 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input24a }}</th>
+                <td>{{ recommenderD24 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input25a }}</th>
+                <td>{{ recommenderD25 }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <strong>Recommendation 5</strong>
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <table class="table caption-top">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">Information</th>
+                <th scope="col">Input</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{ input1a }}</th>
+                <td>{{ recommenderE1 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input2a }}</th>
+                <td>{{ recommenderE2 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input3a }}</th>
+                <td>{{ recommenderE3 }} ft</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input4a }}</th>
+                <td>{{ recommenderE4 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input5a }}</th>
+                <td>{{ recommenderE5 }} pcs</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input6a }}</th>
+                <td>{{ recommenderE6 }} ft</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input7a }}</th>
+                <td>{{ recommenderE7 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input8a }}</th>
+                <td>{{ recommenderE8 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input9a }}</th>
+                <td>{{ recommenderE9 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input10a }}</th>
+                <td>${{ recommenderE10 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input11a }}</th>
+                <td>{{ recommenderE11 }} rooms</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input12a }}</th>
+                <td>{{ recommenderE12 }} rooms</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input13a }}</th>
+                <td>{{ recommenderE13 }} rooms</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input14a }}</th>
+                <td>{{ recommenderE14 }} stories</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input15a }}</th>
+                <td>{{ recommenderE15 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input16a }}</th>
+                <td>{{ recommenderE16 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input17a }}</th>
+                <td>{{ recommenderE17 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input18a }}</th>
+                <td>{{ recommenderE18 }} ft2</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input19a }}</th>
+                <td>{{ recommenderE19 }} ft2</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input20a }}</th>
+                <td>{{ recommenderE20 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input21a }}</th>
+                <td>{{ recommenderE21 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input22a }}</th>
+                <td>{{ recommenderE22 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input23a }}</th>
+                <td>{{ recommenderE23 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input24a }}</th>
+                <td>{{ recommenderE24 }}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{ input25a }}</th>
+                <td>{{ recommenderE25 }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    &ensp;<a type="button" class="btn btn-success" href="http://127.0.0.1:5000/predict1">Predict Again?</a>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

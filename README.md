@@ -1,8 +1,8 @@
 # SeabornGroup_JC_DS_12_FinalProject
 Team Members :
-1. Albert Aldo - ✉️ 12albertaldo@gmail.com | [LinkedIn](https://www.linkedin.com/in/albertaldo/)
-2. Elvin Fatkhunnuha - ✉️ fatkhuelvin@gmail.com | [LinkedIn](https://www.linkedin.com/in/elvin-fatkhunnuha/)
-3. Mingnarto Lie - ✉️ mingnarto.lie@gmail.com | [LinkedIn](https://www.linkedin.com/in/mingnarto-lie-a8b77877/)
+1. Albert Aldo - 12albertaldo@gmail.com | [LinkedIn](https://www.linkedin.com/in/albertaldo/) | [GitHub](https://github.com/AlbertAldo)
+2. Elvin Fatkhunnuha - fatkhuelvin@gmail.com | [LinkedIn](https://www.linkedin.com/in/elvin-fatkhunnuha/) | [GitHub](https://github.com/elvinfatkhu)
+3. Mingnarto Lie - mingnarto.lie@gmail.com | [LinkedIn](https://www.linkedin.com/in/mingnarto-lie-a8b77877/) | [GitHub](https://github.com/Mingnarto)
 
 # House Developer Optimizer With Machine Learning
 
@@ -14,11 +14,14 @@ After the property company gets the desired houses, in the selling stage, custom
 
 In this report, We'll discuss the decisions, we made and show revelant code blocks that describe our modeling process.
 
+# Workflow Project
+![Workflow](https://i.imgur.com/mT6ivur.png)
+
 # 1. Data Cleaning
 
 We collected data from [Kaggle](https://www.kaggle.com/adebayo/philadelphia-buildings-database) and shift our focus to residential type. We study the data columns based on [Metadata Philly Government](https://metadata.phila.gov/#home/datasetdetails/5543865f20583086178c4ee5/representationdetails/55d624fdad35c7e854cb21a4/?view_287_per_page=100&view_287_page=1).
 
-For data that has no description found in  [Metadata Philly Government](https://metadata.phila.gov/#home/datasetdetails/5543865f20583086178c4ee5/representationdetails/55d624fdad35c7e854cb21a4/?view_287_per_page=100&view_287_page=1), we decided to drop those columns based on our analytics. We do the same thing with several missing values that can be found in some columns. We decided to do this because we want to keep our data integrity intact. The same goes for outliers. [Cleaning Data - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/blob/main/1%20-%20Cleaning%20Data.ipynb) 
+For data that has no description found in  [Metadata Philly Government](https://metadata.phila.gov/#home/datasetdetails/5543865f20583086178c4ee5/representationdetails/55d624fdad35c7e854cb21a4/?view_287_per_page=100&view_287_page=1), we decided to drop those columns based on our analytics. We decided to handle the missing values we found. Using not applicable as substitute in several missing values we found in basements, central air, exterior condition, garage type, interior condition, type heater, and view type. The same goes with missing values in parcel shape and topography. The only differentiation is we decided to use mode as the substitute for them. We decided to do this because we want to keep our data integrity intact. The same goes for outliers. [Cleaning Data - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/blob/main/1%20-%20Cleaning%20Data.ipynb) 
 
 # 2. Pre-Processing
 
@@ -30,6 +33,10 @@ Those Clusters are:
 - Segment Middle
 - Segment Upper Middle
 - Segment Top
+
+We also do Exploratory Data Analysis Regression (Market Value) & Classification (Segmentation), for full details, please refers to :
+- [Exploratory Data Analysis Regression (Market Value) - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/blob/main/3%20-%20EDA%20-%20Regression.ipynb)
+- [Exploratory Data Analysis Classification (Segmentation) - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/blob/main/4%20-%20EDA%20-%20Classification.ipynb)
 
 # 3. Modelling & Feature Engineering
 
@@ -81,8 +88,8 @@ Which resulted in the following scores :
 
 Data  | R2 | MAE | MSE | RMSE
 -----|------|------|------|-----|
-Training DecisionTreeClassifier Tuned | 0.829   |24858.31 | 3.108e+09 | 55752.08
-Test DecisionTreeClassifier Tuned | 0.794   | 28765.84 | 4.287e+09 | 65480.06
+Training DecisionTreeClassifier Tuned | 0.818   |20350.7 | 2.477e+09 | 49776.09
+Test DecisionTreeClassifier Tuned | 0.774   | 22407.63 | 3.019e+09 | 54951.45
 
 <hr>
 
@@ -111,8 +118,8 @@ Which resulted in the following scores :
 
 Data  | Accuracy | F1-Score (Macro Avg) | F1-Score (Weighted) |
 -----|------|------|------|
-Training RandomForestClassifier Tuned | 0.947   |0.92 | 0.95 |
-Test RandomForestClassifier Tuned | 0.949   | 0.92 | 0.952 |
+Training RandomForestClassifier Tuned | 0.957   |0.92 | 0.961 |
+Test RandomForestClassifier Tuned | 0.96   | 0.92 | 0.963 |
 
 # 4. Application
 
@@ -122,11 +129,13 @@ When a company buys houses in Philadelphia, this model might become one of the a
 
 The following picture demonstrates how our Regression Model application flows :
 
-![RegressionModel](https://i.imgur.com/XWlOzK8.png)
+![RegressionModel](https://i.imgur.com/6KoKGWB.png)
 
 Other than predicting, our Model also able to recommend based on similar specifications for example :
 
 ![RecommendationSystem](https://i.imgur.com/iporPZP.png)
+
+Please refer to : [Recommendation System - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/blob/main/7%20-%20Recommendation%20System.ipynb)
 
 <hr>
 
@@ -136,20 +145,65 @@ After the property company gets the desired houses, in the selling stage, custom
 
 The following picture demonstrates how our Classification Model application flows :
 
-![ClassificationModel](https://i.imgur.com/Cj6oib2.png)
+![ClassificationModel](https://i.imgur.com/MXFf8B6.png)
 
 # 5. Conclusion
 
 ## - Regression
 With this Model, we will be able to help the company to have benchmarks when purchasing houses, which is why this Model may become one of the alternatives for company that wants to spread its wings
 
-But on the other hand, there are some weaknesses that can be found in this Model. Error differences based on Mean Absolute Error is ± $28765.84 with R2 score 0.793, which means several errors may occured within our Regression Model. Our Model also weak in predicting old houses (Building Description: STONE, Year Built < 1950) and houses that located in Central City where our Model predicted low price while the actuality is quite high. Therefore people with expertise in this area will be better in recommending.
+But on the other hand, there are some weaknesses that can be found in this Model. Error differences based on Mean Absolute Error is ± $22407.63 with R2 score 0.774, which means several errors may occured within our Regression Model. Our Model also weak in predicting old houses (Building Description: STONE, Year Built < 1950) and houses from MASONRY that located in Central City where our Model predicted low price while the actuality is quite high. Therefore people with expertise in this area will be better in recommending.
 
 <hr>
 
 ## - Classification
 This Model can help the company in deciding customers segmentation for Marketing Automation. It will be more effective if we know exactly which type of house is more suitable for which customers segment so the company able to maximize their marketing strategies. For example, customers from lower Middle Cluster is not a suitable target if we try to sell them properties from Top Cluster and vice-versa as it will be most inefficient.
 
-This Model also have a high Accuracy Score of 0.949 and through additional Data from Random Over Sampling of the Minority Class. It leads to a better performance in predicting the Minority Class.
+This Model also have a high Accuracy Score of 0.96 and through additional Data from Random Over Sampling of the Minority Class. It leads to a better performance in predicting the Minority Class.
 
-Thanks for reading our project! We hope our project useful and inspiring.
+# 6. Project Recommendation
+
+## - Regression
+- Based on the price of each section, the cheapest can be found in the North & North East. We can buy and redeveloped them on behalf of the North Philadelphia developer, to be sold on the latter-day with higher price.
+- If the company prefer to build their properties from scratch, it would be better for them to purchase houses that already in poor condition and therefore below market price.
+- When the company decided to buy old houses / houses that are in poor condition, it is of utmost importance to consider the budget in which will be needed to renovate them to prevent the final spending exceeding the main capital.
+
+<hr>
+
+## - Classification
+- Even with the same performance from the sales across the segment, the fifth segment managed to get higher profit-margin up to 22.73% and so it is recommended to prioritize this segment as they can give us higher profit and at the same time creates efficiency in sales department.
+- It will be more effective if we know exactly which type of house is more suitable for which customers segment so the company able to maximize their marketing strategies. For example, customers from lower Middle Cluster is not a suitable target if we try to sell them properties from Top Cluster and vice-versa as it will be most inefficient.
+- We can try to give some promotions such as 0% dp. This will help our marketing side in selling houses to middle-low segment customers so that they become more interested in buying from us and at the same time emptied our stock of houses.
+
+# 7. Dashboard
+
+We create a Dashboard for Deployment our Model. Please refer to [Dashboard - GitHub](https://www.kaggle.com/adebayo/philadelphia-buildings-database)
+
+- ### **Home**
+    ![Home](https://i.imgur.com/BPjh4wW.png)
+
+- ### **Project**
+    ![Project](https://i.imgur.com/UaNp1kS.png)
+
+- ### **Dataset**
+    ![Dataset](https://i.imgur.com/IM4py3v.png)
+
+- ### **Visualization**
+    ![Visualization](https://i.imgur.com/thOf8iV.png)
+
+- ### **Market Value Prediction**
+    ![MarketValuePrediction](https://i.imgur.com/qzBa72j.png)
+
+    ![MarketValueResult](https://i.imgur.com/j8yQ8fb.png)
+
+    ### **Recommendation System**
+    ![RecommendationSystem](https://i.imgur.com/Sr7sxas.png)
+
+- ### **Segmentation Prediction**
+    ![SegmentationPrediction](https://i.imgur.com/yZSuICd.png)
+
+    ![SegmentationResult](https://i.imgur.com/sTodI5A.png)
+
+<hr>
+
+**Thanks for reading our project! We hope our project useful and inspiring.**

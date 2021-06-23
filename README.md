@@ -177,7 +177,7 @@ This Model also have a high Accuracy Score of 0.96 and through additional Data f
 
 # 7. Dashboard
 
-We create a Dashboard for Deployment our Model. Please refer to [Dashboard - GitHub](https://www.kaggle.com/adebayo/philadelphia-buildings-database)
+We create a Dashboard for Deployment our Model. Please refer to [Dashboard - GitHub](https://github.com/PurwadhikaDev/SeabornGroup_JC_DS_12_FinalProject/tree/main/Dashboard)
 
 - ### **Home**
     ![Home](https://i.imgur.com/BPjh4wW.png)
